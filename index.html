@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Herrería Artesanal</title>
+  <title>Herrería Artesanal Formosa</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="../Img/logo_favicon36.jpeg">
-  <link rel="icon" type="image/png" sizes="16x16" href="../Img/logo_favicon16.jpeg">
+  <link rel="icon" type="image/png" sizes="32x32" href="./Img/logo_favicon36.jpeg">
+  <link rel="icon" type="image/png" sizes="16x16" href="./Img/logo_favicon16.jpeg">
   <link rel="apple-touch-icon" sizes="180x180" href="./Img/apple-touch-icon.png">
 
   <!-- Tailwind CDN -->
@@ -26,44 +26,50 @@
       theme: {
         extend: {
           fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
-          boxShadow: { soft: "0 10px 30px rgba(0,0,0,.12)" }
+          boxShadow: { soft: "0 10px 30px rgba(0,0,0,.35)" }
         }
       }
     }
   </script>
 
   <style>
-    /* Detalle sutil tipo “metal” */
-    .grain {
-      background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,.05) 1px, transparent 0);
+    .grain{
+      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.06) 1px, transparent 0);
       background-size: 18px 18px;
     }
+    /* Carrusel: controles más delicados */
     .carousel-control-prev, .carousel-control-next { width: 10%; }
+    .carousel-control-prev-icon, .carousel-control-next-icon { filter: drop-shadow(0 6px 16px rgba(0,0,0,.35)); }
   </style>
 </head>
 
-<body class="bg-zinc-300 text-zinc-900 font-sans selection:bg-amber-200 selection:text-zinc-900">
+<body class="bg-zinc-700 text-zinc-100 font-sans selection:bg-amber-300 selection:text-zinc-950">
 
   <!-- TOP BAR -->
-  <div class="relative z-50 border-b border-zinc-200 bg-white/80 backdrop-blur">
+  <div class="relative z-50 border-b border-zinc-600/70 bg-zinc-800/70 backdrop-blur">
     <div class="mx-auto max-w-6xl px-4 py-2 flex flex-wrap items-center justify-between gap-2 text-sm">
-      <div class="flex items-center gap-3 text-zinc-700">
-        <div class="h-8 w-8 rounded-xl bg-amber-50 border border-amber-200 grid place-items-center">
-          <svg class="h-4 w-4 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+
+      <!-- Mensaje -->
+      <div class="flex items-center gap-3 text-zinc-200">
+        <div class="h-8 w-8 rounded-xl bg-amber-400/10 border border-amber-400/20 grid place-items-center">
+          <!-- Icon: badge-check -->
+          <svg class="h-4 w-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/>
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 2l3 2 3-1 1 3 3 2-2 3 1 3-3 1-2 3-3-2-3 2-2-3-3-1 1-3-2-3 3-2 1-3 3 1 3-2z"/>
           </svg>
         </div>
         <span class="font-medium">
-          Presupuesto sin cargo <span class="text-zinc-300">·</span> Trabajos con garantía
+          Presupuesto sin cargo <span class="text-zinc-500">·</span> Trabajos con garantía
         </span>
       </div>
 
+      <!-- Acciones -->
       <div class="flex items-center gap-2">
         <a href="#contacto"
-           class="inline-flex items-center gap-2 rounded-2xl border border-zinc-200 bg-white px-3 py-1.5 font-semibold text-zinc-800 hover:bg-zinc-100 transition">
-          <span class="h-8 w-8 rounded-xl bg-amber-50 border border-amber-200 grid place-items-center">
-            <svg class="h-4 w-4 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+           class="inline-flex items-center gap-2 rounded-2xl border border-zinc-600/70 bg-zinc-800 px-3 py-1.5 font-semibold text-zinc-100 hover:bg-zinc-700 transition">
+          <span class="h-8 w-8 rounded-xl bg-amber-400/10 border border-amber-400/20 grid place-items-center">
+            <!-- Icon: phone -->
+            <svg class="h-4 w-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round"
                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.09a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z"/>
             </svg>
@@ -74,7 +80,8 @@
         <a target="_blank"
            href="https://wa.me/543704622278?text=Hola%20Herrer%C3%ADa%20Artesanal%20Formosa,%20quisiera%20un%20presupuesto."
            class="inline-flex items-center gap-2 rounded-2xl bg-amber-500 px-3 py-1.5 font-semibold text-white hover:bg-amber-600 transition shadow-soft">
-          <span class="h-8 w-8 rounded-xl bg-white/25 border border-white/30 grid place-items-center">
+          <span class="h-8 w-8 rounded-xl bg-white/10 border border-white/15 grid place-items-center">
+            <!-- Icon: message-circle -->
             <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
             </svg>
@@ -85,48 +92,53 @@
     </div>
   </div>
 
-
   <!-- HEADER -->
-  <header class="sticky top-0 z-40 border-b border-zinc-200 bg-white/90 backdrop-blur">
+  <header class="sticky top-0 z-40 border-b border-zinc-600/70 bg-zinc-800/80 backdrop-blur">
     <div class="mx-auto max-w-6xl px-4 py-4">
       <div class="relative flex items-center justify-between">
 
+        <!-- Marca -->
         <a href="#" class="relative flex items-center">
+          <!-- Espacio reservado para el logo sello -->
           <div class="w-32 sm:w-36"></div>
 
+          <!-- Texto -->
           <div class="pl-2">
-            <p class="font-extrabold tracking-tight text-xl sm:text-2xl text-zinc-900">
+            <p class="font-extrabold tracking-tight text-xl sm:text-2xl text-zinc-100">
               Herrería Artesanal
             </p>
           </div>
 
+          <!-- Logo sello -->
           <div class="absolute left-0 top-1/2 -translate-y-1/2 z-30">
-            <div class="h-20 w-20 sm:h-24 sm:w-24 rounded-3xl bg-white shadow-soft overflow-hidden ring-4 ring-white border border-zinc-200">
+            <div class="h-20 w-20 sm:h-24 sm:w-24 rounded-3xl border border-zinc-600/70 bg-zinc-900/40 shadow-soft overflow-hidden">
               <img
                 src="./Img/logo_herreria_artesanal_formosa.jpeg"
                 alt="Herrería Artesanal Formosa"
-                class="h-full w-full object-contain p-0"
+                class="h-full w-full object-contain p-1"
               />
             </div>
           </div>
         </a>
 
-        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-zinc-700">
-          <a href="#nosotros" class="hover:text-zinc-900 transition">Nosotros</a>
-          <a href="#servicios" class="hover:text-zinc-900 transition">Servicios</a>
-          <a href="#galeria" class="hover:text-zinc-900 transition">Galería</a>
-          <a href="#opiniones" class="hover:text-zinc-900 transition">Opiniones</a>
-          <a href="#contacto" class="hover:text-zinc-900 transition">Contacto</a>
+        <!-- Navegación DESKTOP -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-zinc-200">
+          <a href="#nosotros" class="hover:text-white transition">Nosotros</a>
+          <a href="#servicios" class="hover:text-white transition">Servicios</a>
+          <a href="#galeria" class="hover:text-white transition">Galería</a>
+          <a href="#opiniones" class="hover:text-white transition">Opiniones</a>
+          <a href="#contacto" class="hover:text-white transition">Contacto</a>
         </nav>
 
+        <!-- Botón HAMBURGUESA -->
         <button
           id="menuBtn"
-          class="md:hidden inline-flex items-center justify-center h-11 w-11 rounded-2xl border border-zinc-200 bg-white hover:bg-zinc-100 transition"
+          class="md:hidden inline-flex items-center justify-center h-11 w-11 rounded-2xl border border-zinc-600/70 bg-zinc-800 hover:bg-zinc-700 transition"
           aria-label="Abrir menú"
           aria-controls="mobileMenu"
           aria-expanded="false"
         >
-          <svg class="h-5 w-5 text-zinc-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <svg class="h-5 w-5 text-zinc-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
@@ -134,46 +146,48 @@
       </div>
     </div>
 
-    <div id="menuOverlay" class="fixed inset-0 bg-black/20 hidden md:hidden z-40"></div>
+    <!-- Overlay -->
+    <div id="menuOverlay" class="fixed inset-0 bg-black/40 hidden md:hidden z-40"></div>
 
+    <!-- Menú MOBILE -->
     <div
       id="mobileMenu"
-      class="fixed top-0 right-0 h-full w-[86%] max-w-sm bg-white border-l border-zinc-200 shadow-soft translate-x-full transition-transform duration-200 md:hidden z-50"
+      class="fixed top-0 right-0 h-full w-[86%] max-w-sm bg-zinc-800 border-l border-zinc-600/70 shadow-soft translate-x-full transition-transform duration-200 md:hidden z-50"
       role="dialog"
       aria-modal="true"
       aria-label="Menú móvil"
     >
-      <div class="p-4 border-b border-zinc-200 flex items-center justify-between">
+      <div class="p-4 border-b border-zinc-600/70 flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <div class="h-10 w-10 rounded-2xl bg-amber-50 border border-amber-200 grid place-items-center">
-            <svg class="h-5 w-5 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <div class="h-10 w-10 rounded-2xl bg-amber-400/10 border border-amber-400/20 grid place-items-center">
+            <svg class="h-5 w-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
           </div>
-          <p class="font-extrabold text-zinc-900">Menú</p>
+          <p class="font-extrabold text-white">Menú</p>
         </div>
 
         <button
           id="menuClose"
-          class="inline-flex items-center justify-center h-10 w-10 rounded-2xl border border-zinc-200 bg-white hover:bg-zinc-100 transition"
+          class="inline-flex items-center justify-center h-10 w-10 rounded-2xl border border-zinc-600/70 bg-zinc-800 hover:bg-zinc-700 transition"
           aria-label="Cerrar menú"
         >
-          <svg class="h-5 w-5 text-zinc-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <svg class="h-5 w-5 text-zinc-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/>
           </svg>
         </button>
       </div>
 
       <div class="p-4">
-        <nav class="grid gap-2 text-zinc-800 font-semibold">
-          <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-100 transition" href="#nosotros">Nosotros</a>
-          <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-100 transition" href="#servicios">Servicios</a>
-          <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-100 transition" href="#galeria">Galería</a>
-          <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-100 transition" href="#opiniones">Opiniones</a>
-          <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-100 transition" href="#contacto">Contacto</a>
+        <nav class="grid gap-2 text-zinc-100 font-semibold">
+          <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-700 transition" href="#nosotros">Nosotros</a>
+          <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-700 transition" href="#servicios">Servicios</a>
+          <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-700 transition" href="#galeria">Galería</a>
+          <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-700 transition" href="#opiniones">Opiniones</a>
+          <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-700 transition" href="#contacto">Contacto</a>
         </nav>
 
-        <div class="mt-5 pt-5 border-t border-zinc-200">
+        <div class="mt-5 pt-5 border-t border-zinc-600/70">
           <a
             target="_blank"
             href="https://wa.me/543704622278?text=Hola%20Herrer%C3%ADa%20Artesanal%20Formosa,%20quisiera%20un%20presupuesto."
@@ -187,9 +201,9 @@
 
           <a
             href="tel:+543704622278"
-            class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-zinc-200 bg-white px-5 py-3 text-sm font-semibold text-zinc-900 hover:bg-zinc-100 transition"
+            class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-zinc-600/70 bg-zinc-800 px-5 py-3 text-sm font-semibold text-white hover:bg-zinc-700 transition"
           >
-            <svg class="h-5 w-5 text-zinc-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <svg class="h-5 w-5 text-zinc-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round"
                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.09a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z"/>
             </svg>
@@ -200,25 +214,24 @@
     </div>
   </header>
 
-
-  <!-- Hero -->
-  <section class="relative overflow-hidden border-b border-zinc-200">
-    <div class="absolute inset-0 grain opacity-30"></div>
-    <div class="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-amber-200/40 blur-3xl"></div>
-    <div class="absolute -bottom-28 -left-24 h-72 w-72 rounded-full bg-zinc-200/40 blur-3xl"></div>
+  <!-- HERO -->
+  <section class="relative overflow-hidden border-b border-zinc-600/70">
+    <div class="absolute inset-0 grain opacity-20"></div>
+    <div class="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-amber-400/10 blur-3xl"></div>
+    <div class="absolute -bottom-28 -left-24 h-72 w-72 rounded-full bg-white/5 blur-3xl"></div>
 
     <div class="relative mx-auto max-w-6xl px-4 py-14 sm:py-20">
       <div class="mx-auto max-w-3xl text-center">
-        <p class="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-200 bg-white/80 px-4 py-2 text-xs text-zinc-700">
+        <p class="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-600/70 bg-zinc-800/60 px-4 py-2 text-xs text-zinc-300">
           <span class="h-2 w-2 rounded-full bg-amber-500"></span>
           Fabricación y reparaciones de todo tipo
         </p>
 
-        <h1 class="mt-5 text-3xl sm:text-5xl font-extrabold tracking-tight text-zinc-900">
-          Trabajos de herrería <span class="text-amber-600">a medida</span>, con terminación prolija.
+        <h1 class="mt-5 text-3xl sm:text-5xl font-extrabold tracking-tight text-zinc-100">
+          Trabajos de herrería <span class="text-amber-400">a medida</span>, con terminación prolija.
         </h1>
 
-        <p class="mt-4 text-zinc-700 leading-relaxed">
+        <p class="mt-4 text-zinc-300 leading-relaxed">
           Portones, rejas, barandas, estructuras, parrillas y más.
           Te asesoramos y armamos presupuesto según tu necesidad.
         </p>
@@ -227,53 +240,52 @@
           <a target="_blank"
              href="https://wa.me/543704622278?text=Hola%20Herrer%C3%ADa%20Artesanal%20Formosa,%20quisiera%20un%20presupuesto%20para%20..."
              class="inline-flex items-center justify-center gap-2 rounded-2xl bg-amber-500 px-6 py-3 text-sm font-semibold text-white hover:bg-amber-600 transition shadow-soft">
-            Pedir presupuesto por WhatsApp
-            <span aria-hidden="true">→</span>
+            Pedir presupuesto por WhatsApp <span aria-hidden="true">→</span>
           </a>
 
           <a href="#servicios"
-             class="inline-flex items-center justify-center gap-2 rounded-2xl border border-zinc-200 bg-white px-6 py-3 text-sm font-semibold text-zinc-900 hover:bg-zinc-100 transition">
+             class="inline-flex items-center justify-center gap-2 rounded-2xl border border-zinc-600/70 bg-zinc-800/60 px-6 py-3 text-sm font-semibold text-white hover:bg-zinc-800 transition">
             Ver trabajos y servicios
           </a>
         </div>
-
       </div>
 
+      <!-- Beneficios -->
       <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <div class="rounded-2xl border border-zinc-200 bg-white p-5 shadow-soft">
+        <div class="rounded-2xl border border-zinc-600/70 bg-zinc-800 p-5 shadow-soft">
           <div class="flex items-start gap-3">
-            <div class="h-10 w-10 rounded-xl bg-amber-50 border border-amber-200 grid place-items-center">
-              <svg class="h-5 w-5 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <div class="h-10 w-10 rounded-xl bg-amber-400/10 border border-amber-400/20 grid place-items-center">
+              <svg class="h-5 w-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6M9 11h.01M12 11h.01M15 11h.01M9 15h.01M12 15h.01M15 15h.01M9 19h6"/>
                 <path stroke-linecap="round" stroke-linejoin="round" d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/>
               </svg>
             </div>
             <div>
-              <p class="text-sm font-semibold text-zinc-900">Presupuesto</p>
-              <p class="text-xs text-zinc-600 mt-1">Sin cargo</p>
+              <p class="text-sm font-semibold text-white">Presupuesto</p>
+              <p class="text-xs text-zinc-300 mt-1">Sin cargo</p>
             </div>
           </div>
         </div>
 
-        <div class="rounded-2xl border border-zinc-200 bg-white p-5 shadow-soft">
+        <div class="rounded-2xl border border-zinc-600/70 bg-zinc-800 p-5 shadow-soft">
           <div class="flex items-start gap-3">
-            <div class="h-10 w-10 rounded-xl bg-amber-50 border border-amber-200 grid place-items-center">
-              <svg class="h-5 w-5 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <div class="h-10 w-10 rounded-xl bg-amber-400/10 border border-amber-400/20 grid place-items-center">
+              <svg class="h-5 w-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/>
               </svg>
             </div>
             <div>
-              <p class="text-sm font-semibold text-zinc-900">Garantía</p>
-              <p class="text-xs text-zinc-600 mt-1">Trabajos responsables</p>
+              <p class="text-sm font-semibold text-white">Garantía</p>
+              <p class="text-xs text-zinc-300 mt-1">Trabajos responsables</p>
             </div>
           </div>
         </div>
 
-        <div class="rounded-2xl border border-zinc-200 bg-white p-5 shadow-soft">
+        <div class="rounded-2xl border border-zinc-600/70 bg-zinc-800 p-5 shadow-soft">
           <div class="flex items-start gap-3">
-            <div class="h-10 w-10 rounded-xl bg-amber-50 border border-amber-200 grid place-items-center">
-              <svg class="h-5 w-5 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <div class="h-10 w-10 rounded-xl bg-amber-400/10 border border-amber-400/20 grid place-items-center">
+              <svg class="h-5 w-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M14 7l3 3"/>
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 20l4.5-1 10-10a2.1 2.1 0 0 0 0-3L18 4a2.1 2.1 0 0 0-3 0l-10 10L4 20z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 19h7"/>
@@ -281,54 +293,52 @@
               </svg>
             </div>
             <div>
-              <p class="text-sm font-semibold text-zinc-900">Diseños</p>
-              <p class="text-xs text-zinc-600 mt-1">Variedad y a medida</p>
+              <p class="text-sm font-semibold text-white">Diseños</p>
+              <p class="text-xs text-zinc-300 mt-1">Variedad y a medida</p>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-
   <!-- Nosotros -->
-  <section id="nosotros" class="border-b border-zinc-200 bg-transparent">
+  <section id="nosotros" class="border-b border-zinc-600/70 bg-zinc-800/60">
     <div class="mx-auto max-w-6xl px-4 py-14">
       <div class="grid gap-8 lg:grid-cols-2 items-center">
         <div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Sobre nosotros</h2>
-          <p class="mt-3 text-zinc-700 leading-relaxed">
-            En Herrería Artesanal realizamos trabajos a medida con terminación prolija,
-            asesoramiento y compromiso en cada entrega. Buscamos que cada proyecto quede firme, seguro y bien presentado.
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">Sobre nosotros</h2>
+          <p class="mt-3 text-zinc-300 leading-relaxed">
+           En Herrería Artesanal realizamos trabajos a medida con terminación prolija, asesoramiento y compromiso en cada entrega. Buscamos que cada proyecto quede firme, seguro y bien presentado para hogares y negocios de Formosa Capital.
           </p>
 
-          <ul class="mt-6 space-y-3 text-zinc-800">
+          <ul class="mt-6 space-y-3 text-zinc-200">
             <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-amber-500 shrink-0"></span><span>Atención personalizada y presupuesto sin cargo</span></li>
             <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-amber-500 shrink-0"></span><span>Materiales y terminaciones cuidadas</span></li>
             <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-amber-500 shrink-0"></span><span>Diseños clásicos y modernos según tu necesidad</span></li>
           </ul>
         </div>
 
-        <div class="rounded-3xl border border-zinc-200 bg-white overflow-hidden shadow-soft">
-          <img src="./Img/nosotros_herreria_artesanal.jpg" alt="Trabajo de herrería" class="h-72 w-full object-cover" loading="lazy">
+        <div class="rounded-3xl border border-zinc-600/70 bg-zinc-800 overflow-hidden shadow-soft">
+          <img src="./Img/nosotros_herreria_artesanal.jpg" alt="Trabajo de herrería" class="h-72 w-full object-cover" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
   </section>
 
-
   <!-- Servicios -->
-  <section id="servicios" class="border-b border-zinc-200 bg-zinc-50/60">
+  <section id="servicios" class="border-b border-zinc-600/70 bg-zinc-700">
     <div class="mx-auto max-w-6xl px-4 py-14">
       <div class="flex items-end justify-between gap-4 flex-wrap">
         <div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Trabajos de herrería</h2>
-          <p class="mt-2 text-zinc-700 max-w-2xl">
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">Trabajos de herrería</h2>
+          <p class="mt-2 text-zinc-300 max-w-2xl">
             Fabricación y reparaciones de todo tipo. Trabajos a medida, con diseños clásicos o modernos.
           </p>
         </div>
 
-        <!-- Botón Consultar (ahora naranja) -->
+        <!-- Consultar (naranja como pidió el cliente) -->
         <a target="_blank"
            href="https://wa.me/543704622278?text=Hola%20Herrer%C3%ADa%20Artesanal%20Formosa,%20quiero%20consultar%20por%20un%20trabajo%20de%20..."
            class="rounded-2xl bg-amber-500 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-600 transition shadow-soft">
@@ -337,30 +347,30 @@
       </div>
 
       <div class="mt-8 grid gap-4 md:grid-cols-2">
-        <div class="rounded-3xl border border-zinc-200 bg-white p-6 shadow-soft">
-          <h3 class="font-bold text-lg">Estructuras y cerramientos</h3>
-          <ul class="mt-4 space-y-3 text-zinc-800">
+        <div class="rounded-3xl border border-zinc-600/70 bg-zinc-800 p-6 shadow-soft">
+          <h3 class="font-bold text-lg text-white">Estructuras y cerramientos</h3>
+          <ul class="mt-4 space-y-3 text-zinc-200">
             <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-amber-500 shrink-0"></span><span>Portones · Rejas · Aleros · Trabas para puertas y ventanas</span></li>
             <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-amber-500 shrink-0"></span><span>Barandas para escaleras y balcones</span></li>
             <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-amber-500 shrink-0"></span><span>Tinglados · Cocheras</span></li>
           </ul>
         </div>
 
-        <div class="rounded-3xl border border-zinc-200 bg-white p-6 shadow-soft">
-          <h3 class="font-bold text-lg">Parrillas y varios</h3>
-          <ul class="mt-4 space-y-3 text-zinc-800">
+        <div class="rounded-3xl border border-zinc-600/70 bg-zinc-800 p-6 shadow-soft">
+          <h3 class="font-bold text-lg text-white">Parrillas y varios</h3>
+          <ul class="mt-4 space-y-3 text-zinc-200">
             <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-amber-500 shrink-0"></span><span>Cestos para residuos</span></li>
             <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-amber-500 shrink-0"></span><span>Parrillas · Bandejas para hornos · Discos paelleros</span></li>
-            <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-amber-500 shrink-0"></span><span>Trabajos Varios</span></li>
+            <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-amber-500 shrink-0"></span><span>Trabajos varios</span></li>
           </ul>
         </div>
 
-        <div class="md:col-span-2 rounded-3xl border border-zinc-200 bg-white p-6 shadow-soft">
+        <div class="md:col-span-2 rounded-3xl border border-zinc-600/70 bg-zinc-800 p-6 shadow-soft">
           <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
-              <p class="text-sm text-zinc-600">Compromiso</p>
-              <p class="mt-1 font-bold text-lg text-zinc-900">Presupuesto sin cargo · Trabajos con garantía</p>
-              <p class="mt-2 text-sm text-zinc-700">
+              <p class="text-sm text-zinc-400">Compromiso</p>
+              <p class="mt-1 font-bold text-lg text-white">Presupuesto sin cargo · Trabajos con garantía</p>
+              <p class="mt-2 text-sm text-zinc-300">
                 Contanos qué necesitás, te asesoramos y te pasamos una cotización clara.
               </p>
             </div>
@@ -375,52 +385,179 @@
     </div>
   </section>
 
+  <!-- Galería (solo imágenes) -->
+  <section id="galeria" class="border-b border-zinc-600/70 bg-transparent">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">Galería</h2>
+      <p class="mt-2 text-white/90">
+        Te presentamos algunos de nuestros trabajos: portones, rejas, barandas, parrillas, etc.
+      </p>
 
-  <!-- Galería -->
-<section id="galeria" class="border-b border-zinc-200 bg-transparent">
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-3xl border border-zinc-600/70 bg-zinc-800 overflow-hidden shadow-soft">
+          <img src="./Img/portones_formosa2.jpg" alt="Trabajo de herrería" class="h-56 w-full object-cover" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="rounded-3xl border border-zinc-600/70 bg-zinc-800 overflow-hidden shadow-soft">
+          <img src="./Img/barandas_formosa.png" alt="Trabajo de herrería" class="h-56 w-full object-cover" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="rounded-3xl border border-zinc-600/70 bg-zinc-800 overflow-hidden shadow-soft">
+          <img src="./Img/chulenco_formosa2.jpg" alt="Trabajo de herrería" class="h-56 w-full object-cover" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="rounded-3xl border border-zinc-600/70 bg-zinc-800 overflow-hidden shadow-soft">
+          <img src="./Img/portones_formosa9.jpg" alt="Trabajo de herrería" class="h-56 w-full object-cover" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="rounded-3xl border border-zinc-600/70 bg-zinc-800 overflow-hidden shadow-soft">
+          <img src="./Img/pergola_formosa.jpg" alt="Trabajo de herrería" class="h-56 w-full object-cover" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="rounded-3xl border border-zinc-600/70 bg-zinc-800 overflow-hidden shadow-soft">
+          <img src="./Img/pergola_formosa2.jpg" alt="Trabajo de herrería" class="h-56 w-full object-cover" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Disponibles / Vendidos -->
+<section id="disponibles" class="border-b border-zinc-600/70 bg-zinc-700">
   <div class="mx-auto max-w-6xl px-4 py-14">
-    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Galería</h2>
-    <p class="mt-2 text-zinc-700">
-      Te presentamos algunos de nuestros trabajos: portones, rejas, barandas, parrillas, etc.
+
+    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-zinc-100">
+      Disponibles y vendidos
+    </h2>
+    <p class="mt-2 text-zinc-300 max-w-2xl">
+      Algunos trabajos disponibles actualmente y otros ya entregados como referencia.
     </p>
 
-    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      <div class="rounded-3xl border border-zinc-200 bg-white overflow-hidden shadow-soft">
-        <img src="./Img/portones_formosa2.jpg" alt="Portón / Reja" class="h-56 w-full object-cover" loading="lazy" />
-      </div>
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
-      <div class="rounded-3xl border border-zinc-200 bg-white overflow-hidden shadow-soft">
-        <img src="./Img/barandas_formosa.png" alt="Barandas" class="h-56 w-full object-cover" loading="lazy" />
-      </div>
+      <!-- CARD 1 · DISPONIBLE -->
+      <article class="rounded-3xl border border-zinc-600/70 bg-zinc-800 overflow-hidden shadow-soft">
+        <div class="relative">
+          <img src="./Img/paellero_disponible.jpg"
+               class="h-52 w-full object-cover"
+               alt="Portón corredizo">
 
-      <div class="rounded-3xl border border-zinc-200 bg-white overflow-hidden shadow-soft">
-        <img src="./Img/chulenco_formosa2.jpg" alt="Parrillas y varios" class="h-56 w-full object-cover" loading="lazy" />
-      </div>
+          <span class="absolute top-3 left-3 rounded-full px-3 py-1 text-xs font-bold
+                       bg-emerald-500/20 text-emerald-200 border border-emerald-500/40">
+            Disponible
+          </span>
+        </div>
 
-      <div class="rounded-3xl border border-zinc-200 bg-white overflow-hidden shadow-soft">
-        <img src="./Img/portones_formosa9.jpg" alt="Aleros / Cocheras" class="h-56 w-full object-cover" loading="lazy" />
-      </div>
+        <div class="p-4">
+          <h3 class="font-bold text-zinc-100">Portón corredizo</h3>
 
-      <div class="rounded-3xl border border-zinc-200 bg-white overflow-hidden shadow-soft">
-        <img src="./Img/pergola_formosa.jpg" alt="Trailer a medida" class="h-56 w-full object-cover" loading="lazy" />
-      </div>
+          <div class="mt-3 rounded-xl border border-zinc-600/70 bg-zinc-900/40 p-3">
+            <p class="text-xs text-zinc-400">Precio normal</p>
+            <p class="text-sm text-zinc-300 line-through">$115.000</p>
 
-      <div class="rounded-3xl border border-zinc-200 bg-white overflow-hidden shadow-soft">
-        <img src="./Img/pergola_formosa2.jpg" alt="Diseños varios" class="h-56 w-full object-cover" loading="lazy" />
-      </div>
+            <p class="mt-1 text-xs text-zinc-400">Oferta</p>
+            <p class="text-xl font-extrabold text-amber-400">$90.000</p>
+          </div>
+
+          <a target="_blank"
+             href="https://wa.me/543704622278?text=Hola,%20quiero%20consultar%20por%20el%20portón%20en%20oferta."
+             class="mt-4 inline-flex w-full justify-center rounded-2xl bg-amber-500 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-600 transition">
+            Consultar
+          </a>
+        </div>
+      </article>
+
+      <!-- CARD 2 · DISPONIBLE -->
+      <article class="rounded-3xl border border-zinc-600/70 bg-zinc-800 overflow-hidden shadow-soft">
+        <div class="relative">
+          <img src="./Img/chulenco_formosa2.jpg"
+               class="h-52 w-full object-cover"
+               alt="Parrilla a medida">
+
+          <span class="absolute top-3 left-3 rounded-full px-3 py-1 text-xs font-bold
+                       bg-emerald-500/20 text-emerald-200 border border-emerald-500/40">
+            Disponible
+          </span>
+        </div>
+
+        <div class="p-4">
+          <h3 class="font-bold text-zinc-100">Parrilla a medida</h3>
+
+          <div class="mt-3 rounded-xl border border-zinc-600/70 bg-zinc-900/40 p-3">
+            <p class="text-xs text-zinc-400">Precio</p>
+            <p class="text-xl font-extrabold text-amber-400">$90.000</p>
+          </div>
+
+          <a target="_blank"
+             href="https://wa.me/543704622278?text=Hola,%20quiero%20consultar%20por%20la%20parrilla."
+             class="mt-4 inline-flex w-full justify-center rounded-2xl bg-amber-500 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-600 transition">
+            Consultar
+          </a>
+        </div>
+      </article>
+
+      <!-- CARD 3 · VENDIDO -->
+      <article class="rounded-3xl border border-zinc-600/70 bg-zinc-800 overflow-hidden shadow-soft opacity-70">
+        <div class="relative">
+          <img src="./Img/barandas_formosa.png"
+               class="h-52 w-full object-cover grayscale"
+               alt="Baranda vendida">
+
+          <!-- Overlay -->
+          <div class="absolute inset-0 bg-black/40 grid place-items-center">
+            <span class="rounded-full px-4 py-2 text-sm font-bold
+                         bg-zinc-900/80 text-zinc-200 border border-zinc-500">
+              VENDIDO
+            </span>
+          </div>
+        </div>
+
+        <div class="p-4">
+          <h3 class="font-bold text-zinc-200">Baranda escalera</h3>
+
+          <button
+            class="mt-4 w-full rounded-2xl border border-zinc-600 bg-zinc-900/40 px-4 py-2 text-sm text-zinc-400 cursor-not-allowed">
+            No disponible
+          </button>
+        </div>
+      </article>
+
+      <!-- CARD 4 · VENDIDO -->
+      <article class="rounded-3xl border border-zinc-600/70 bg-zinc-800 overflow-hidden shadow-soft opacity-70">
+        <div class="relative">
+          <img src="./Img/pergola_formosa.jpg"
+               class="h-52 w-full object-cover grayscale"
+               alt="Trailer vendido">
+
+          <div class="absolute inset-0 bg-black/40 grid place-items-center">
+            <span class="rounded-full px-4 py-2 text-sm font-bold
+                         bg-zinc-900/80 text-zinc-200 border border-zinc-500">
+              VENDIDO
+            </span>
+          </div>
+        </div>
+
+        <div class="p-4">
+          <h3 class="font-bold text-zinc-200">Trailer a medida</h3>
+
+          <button
+            class="mt-4 w-full rounded-2xl border border-zinc-600 bg-zinc-900/40 px-4 py-2 text-sm text-zinc-400 cursor-not-allowed">
+            No disponible
+          </button>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
 
 
-
   <!-- Opiniones -->
-  <section id="opiniones" class="bg-zinc-50/60 border-b border-zinc-200">
+  <section id="opiniones" class="bg-zinc-700 border-b border-zinc-600/70">
     <div class="mx-auto max-w-6xl px-4 py-14">
-      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-zinc-900 text-center">
+      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white text-center">
         Opiniones de clientes
       </h2>
-      <p class="mt-2 text-zinc-700 text-center max-w-2xl mx-auto">
+      <p class="mt-2 text-zinc-300 text-center max-w-2xl mx-auto">
         Algunos comentarios de personas que confiaron en nuestros trabajos.
       </p>
 
@@ -438,54 +575,56 @@
         </div>
 
         <div class="carousel-inner">
+
           <div class="carousel-item active">
             <div class="flex justify-center">
-              <div class="max-w-xl bg-white border border-zinc-200 rounded-3xl p-6 shadow-soft text-center">
-                <p class="text-zinc-700 leading-relaxed">
+              <div class="max-w-xl bg-zinc-800 border border-zinc-600/70 rounded-3xl p-6 shadow-soft text-center">
+                <p class="text-zinc-300 leading-relaxed">
                   “Excelente trabajo. Cumplieron con lo acordado y la terminación del portón quedó muy prolija.
                   Recomendable.”
                 </p>
-                <p class="mt-4 font-semibold text-zinc-900">Carlos M.</p>
-                <p class="text-sm text-zinc-500">Portón y rejas</p>
+                <p class="mt-4 font-semibold text-white">Carlos M.</p>
+                <p class="text-sm text-zinc-400">Portón y rejas</p>
               </div>
             </div>
           </div>
 
           <div class="carousel-item">
             <div class="flex justify-center">
-              <div class="max-w-xl bg-white border border-zinc-200 rounded-3xl p-6 shadow-soft text-center">
-                <p class="text-zinc-700 leading-relaxed">
+              <div class="max-w-xl bg-zinc-800 border border-zinc-600/70 rounded-3xl p-6 shadow-soft text-center">
+                <p class="text-zinc-300 leading-relaxed">
                   “Muy conforme con la parrilla y los detalles del trabajo. Buena atención y responsabilidad.”
                 </p>
-                <p class="mt-4 font-semibold text-zinc-900">María L.</p>
-                <p class="text-sm text-zinc-500">Parrilla a medida</p>
+                <p class="mt-4 font-semibold text-white">María L.</p>
+                <p class="text-sm text-zinc-400">Parrilla a medida</p>
               </div>
             </div>
           </div>
 
           <div class="carousel-item">
             <div class="flex justify-center">
-              <div class="max-w-xl bg-white border border-zinc-200 rounded-3xl p-6 shadow-soft text-center">
-                <p class="text-zinc-700 leading-relaxed">
+              <div class="max-w-xl bg-zinc-800 border border-zinc-600/70 rounded-3xl p-6 shadow-soft text-center">
+                <p class="text-zinc-300 leading-relaxed">
                   “Buen asesoramiento desde el primer momento. El trabajo quedó tal como lo habíamos pedido.”
                 </p>
-                <p class="mt-4 font-semibold text-zinc-900">Jorge R.</p>
-                <p class="text-sm text-zinc-500">Barandas y estructura</p>
+                <p class="mt-4 font-semibold text-white">Jorge R.</p>
+                <p class="text-sm text-zinc-400">Barandas y estructura</p>
               </div>
             </div>
           </div>
 
           <div class="carousel-item">
             <div class="flex justify-center">
-              <div class="max-w-xl bg-white border border-zinc-200 rounded-3xl p-6 shadow-soft text-center">
-                <p class="text-zinc-700 leading-relaxed">
+              <div class="max-w-xl bg-zinc-800 border border-zinc-600/70 rounded-3xl p-6 shadow-soft text-center">
+                <p class="text-zinc-300 leading-relaxed">
                   “Responsables y cumplidores. El trailer quedó firme y bien terminado. Volvería a contratar.”
                 </p>
-                <p class="mt-4 font-semibold text-zinc-900">Daniel A.</p>
-                <p class="text-sm text-zinc-500">Trailer a medida</p>
+                <p class="mt-4 font-semibold text-white">Daniel A.</p>
+                <p class="text-sm text-zinc-400">Trailer a medida</p>
               </div>
             </div>
           </div>
+
         </div>
 
         <button class="carousel-control-prev !opacity-100" type="button" data-bs-target="#opinionesCarousel" data-bs-slide="prev">
@@ -502,172 +641,151 @@
     </div>
   </section>
 
+  <!-- Contacto + Mapa -->
+  <section id="contacto" class="bg-zinc-800/60">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <div class="grid gap-8 lg:grid-cols-2 items-start">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">Contacto</h2>
+          <p class="mt-2 text-zinc-300">Escribinos y contanos qué necesitás. Respondemos a la brevedad.</p>
 
-  <!-- Contacto + mapa -->
-<section id="contacto" class="bg-transparent">
-  <div class="mx-auto max-w-6xl px-4 py-14">
-    <div class="grid gap-8 lg:grid-cols-2 items-start">
-
-      <!-- Columna izquierda -->
-      <div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Contacto</h2>
-        <p class="mt-2 text-zinc-700">
-          Escribinos y contanos qué necesitás. Respondemos a la brevedad.
-        </p>
-
-        <div class="mt-6 grid gap-4">
-
-          <!-- Teléfono / WhatsApp -->
-          <div class="rounded-3xl border border-zinc-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-soft">
-            <div class="flex items-start gap-3">
-              <div class="h-10 w-10 rounded-xl bg-amber-50 border border-amber-200 grid place-items-center">
-                <!-- Icon: phone -->
-                <svg class="h-5 w-5 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.09a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z"/>
-                </svg>
-              </div>
-
-              <div class="flex-1">
-                <p class="text-sm font-semibold text-zinc-900">Teléfono / WhatsApp</p>
-                <p class="mt-1 text-lg font-bold text-zinc-900">370 462-2278</p>
-                <p class="text-xs text-zinc-600 mt-1">Consultas y presupuestos sin cargo.</p>
-
-                <div class="mt-4 flex flex-col sm:flex-row gap-3">
-                  <a target="_blank"
-                     href="https://wa.me/543704622278?text=Hola%20Herrer%C3%ADa%20Artesanal%20Formosa,%20quisiera%20consultar%20por%20..."
-                     class="inline-flex items-center justify-center gap-2 rounded-2xl bg-amber-500 px-5 py-3 text-sm font-semibold text-white hover:bg-amber-600 transition shadow-soft">
-                    <!-- Icon: message -->
-                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
-                    </svg>
-                    Abrir WhatsApp
-                  </a>
-
-                  <a href="tel:+543704622278"
-                     class="inline-flex items-center justify-center gap-2 rounded-2xl border border-zinc-200 bg-white px-5 py-3 text-sm font-semibold text-zinc-900 hover:bg-zinc-100 transition">
-                    <!-- Icon: phone-call -->
-                    <svg class="h-5 w-5 text-zinc-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.09a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z"/>
-                    </svg>
-                    Llamar
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Redes + Email -->
-          <div class="rounded-3xl border border-zinc-200 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-soft">
-            <div class="flex items-start gap-3">
-              <div class="h-10 w-10 rounded-xl bg-amber-50 border border-amber-200 grid place-items-center">
-                <!-- Icon: share -->
-                <svg class="h-5 w-5 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M16 6l-4-4-4 4"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v14"/>
-                </svg>
-              </div>
-
-              <div class="flex-1">
-                <p class="text-sm font-semibold text-zinc-900">Redes</p>
-                <p class="text-xs text-zinc-600 mt-1">Seguinos y mirá trabajos publicados.</p>
-
-                <div class="mt-4 flex flex-wrap items-center gap-3">
-                  <a class="inline-flex items-center gap-2 rounded-2xl border border-zinc-200 bg-white px-4 py-2 text-sm font-semibold text-zinc-900 hover:bg-zinc-100 transition"
-                     target="_blank"
-                     href="https://www.facebook.com/HerreriaArtesanalFormosa?locale=es_LA">
-                    <span class="h-8 w-8 rounded-xl bg-amber-50 border border-amber-200 grid place-items-center">
-                      <!-- Icon: Facebook -->
-                      <svg viewBox="0 0 24 24" class="h-4 w-4 text-amber-700" fill="currentColor" aria-hidden="true">
-                        <path d="M22 12a10 10 0 1 0-11.56 9.88v-7H7.9V12h2.54V9.8c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.88h-2.34v7A10 10 0 0 0 22 12z"/>
-                      </svg>
-                    </span>
-                    Herreria Artesanal
-                  </a>
+          <div class="mt-6 grid gap-4">
+            <div class="rounded-3xl border border-zinc-600/70 bg-zinc-800 p-6 shadow-soft">
+              <div class="flex items-start gap-3">
+                <div class="h-10 w-10 rounded-xl bg-amber-400/10 border border-amber-400/20 grid place-items-center">
+                  <svg class="h-5 w-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.09a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z"/>
+                  </svg>
                 </div>
 
-                <div class="mt-6">
-                  <p class="text-sm font-semibold text-zinc-900">Email</p>
-                  <div class="mt-2 flex items-center gap-2 text-sm text-zinc-700">
-                    <span class="h-8 w-8 rounded-xl bg-amber-50 border border-amber-200 grid place-items-center">
-                      <!-- Icon: mail -->
-                      <svg class="h-4 w-4 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v16H4z"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M22 6l-10 7L2 6"/>
+                <div class="flex-1">
+                  <p class="text-sm font-semibold text-white">Teléfono / WhatsApp</p>
+                  <p class="mt-1 text-lg font-bold text-white">370 462-2278</p>
+                  <p class="text-xs text-zinc-300 mt-1">Consultas y presupuestos sin cargo.</p>
+
+                  <div class="mt-4 flex flex-col sm:flex-row gap-3">
+                    <a target="_blank"
+                       href="https://wa.me/543704622278?text=Hola%20Herrer%C3%ADa%20Artesanal%20Formosa,%20quisiera%20consultar%20por%20..."
+                       class="inline-flex items-center justify-center gap-2 rounded-2xl bg-amber-500 px-5 py-3 text-sm font-semibold text-white hover:bg-amber-600 transition shadow-soft">
+                      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
                       </svg>
-                    </span>
-                    <a class="text-amber-700 hover:text-amber-800 break-all" href="mailto:briteizjuanpablo@gmail.com">
-                      britezjuanpablo@gmail.com
+                      Abrir WhatsApp
+                    </a>
+
+                    <a href="tel:+543704622278"
+                       class="inline-flex items-center justify-center gap-2 rounded-2xl border border-zinc-600/70 bg-zinc-800 px-5 py-3 text-sm font-semibold text-white hover:bg-zinc-700 transition">
+                      <svg class="h-5 w-5 text-zinc-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.09a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z"/>
+                      </svg>
+                      Llamar
                     </a>
                   </div>
+
                 </div>
+              </div>
+            </div>
+
+            <div class="rounded-3xl border border-zinc-600/70 bg-zinc-800 p-6 shadow-soft">
+              <div class="flex items-start gap-3">
+                <div class="h-10 w-10 rounded-xl bg-amber-400/10 border border-amber-400/20 grid place-items-center">
+                  <svg class="h-5 w-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 6l-4-4-4 4"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v14"/>
+                  </svg>
+                </div>
+
+                <div class="flex-1">
+                  <p class="text-sm font-semibold text-white">Redes</p>
+                  <p class="text-xs text-zinc-300 mt-1">Seguinos y mirá trabajos publicados.</p>
+
+                  <div class="mt-4 flex flex-wrap items-center gap-3">
+                    <a class="inline-flex items-center gap-2 rounded-2xl border border-zinc-600/70 bg-zinc-800 px-4 py-2 text-sm font-semibold text-white hover:bg-zinc-700 transition"
+                       target="_blank"
+                       href="https://www.facebook.com/HerreriaArtesanalFormosa?locale=es_LA">
+                      <span class="h-8 w-8 rounded-xl bg-amber-400/10 border border-amber-400/20 grid place-items-center">
+                        <svg viewBox="0 0 24 24" class="h-4 w-4 text-amber-400" fill="currentColor" aria-hidden="true">
+                          <path d="M22 12a10 10 0 1 0-11.56 9.88v-7H7.9V12h2.54V9.8c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.88h-2.34v7A10 10 0 0 0 22 12z"/>
+                        </svg>
+                      </span>
+                      Herreria Artesanal
+                    </a>
+                  </div>
+
+                  <div class="mt-6">
+                    <p class="text-sm font-semibold text-white">Email</p>
+                    <div class="mt-2 flex items-center gap-2 text-sm text-zinc-200">
+                      <span class="h-8 w-8 rounded-xl bg-amber-400/10 border border-amber-400/20 grid place-items-center">
+                        <svg class="h-4 w-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v16H4z"/>
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M22 6l-10 7L2 6"/>
+                        </svg>
+                      </span>
+                      <a class="text-amber-300 hover:text-amber-200 break-all" href="mailto:briteizjuanpablo@gmail.com">
+                        briteizjuanpablo@gmail.com
+                      </a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- MAPA -->
+        <div class="rounded-3xl border border-zinc-600/70 bg-zinc-800 overflow-hidden shadow-soft">
+          <div class="p-6 border-b border-zinc-600/70">
+            <div class="flex items-start gap-3">
+              <div class="h-10 w-10 rounded-xl bg-amber-400/10 border border-amber-400/20 grid place-items-center">
+                <svg class="h-5 w-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                </svg>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-bold text-white">Ubicación</h3>
+                <p class="mt-1 text-sm text-zinc-300">
+                  Av 9 de Julio 381 B° Independencia.
+                </p>
               </div>
             </div>
           </div>
 
-        </div>
-      </div>
+          <!-- IMPORTANTE: pegá tus coordenadas en PEGAR_LAT,PEGAR_LNG -->
+          <iframe
+            class="w-full h-[360px]"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=-26.1850,-58.1730&output=embed">
+          </iframe>
 
-      <!-- Columna derecha: mapa -->
-      <div class="rounded-3xl border border-zinc-200 bg-white overflow-hidden shadow-soft transition hover:-translate-y-0.5 hover:shadow-soft">
-        <div class="p-6 border-b border-zinc-200">
-          <div class="flex items-start gap-3">
-            <div class="h-10 w-10 rounded-xl bg-amber-50 border border-amber-200 grid place-items-center">
-              <!-- Icon: map-pin -->
-              <svg class="h-5 w-5 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z"/>
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+          <div class="p-6">
+            <a target="_blank"
+               href="https://www.google.com/maps?q=-26.1850,-58.1730"
+               class="inline-flex items-center gap-2 rounded-2xl border border-zinc-600/70 bg-zinc-800 px-4 py-2 text-sm font-semibold text-white hover:bg-zinc-700 transition">
+              <svg class="h-5 w-5 text-zinc-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 14L21 3"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 14v7H3V3h7"/>
               </svg>
-            </div>
-
-            <div>
-              <h3 class="text-lg font-bold text-zinc-900">Ubicación</h3>
-              <p class="mt-1 text-sm text-zinc-700">
-                Av. 9 de Julio 381 (pedir a Pablo asi configurar coordenadas de google maps)
-              </p>
-            </div>
+              Abrir en Google Maps
+            </a>
           </div>
         </div>
-
-        <iframe
-          class="w-full h-[360px]"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=Formosa%20Argentina&output=embed">
-        </iframe>
-
-        <div class="p-6">
-          <a target="_blank"
-             href="https://www.google.com/maps?q=Formosa%20Argentina"
-             class="inline-flex items-center gap-2 rounded-2xl border border-zinc-200 bg-white px-4 py-2 text-sm font-semibold text-zinc-900 hover:bg-zinc-100 transition">
-            <!-- Icon: external-link -->
-            <svg class="h-5 w-5 text-zinc-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7"/>
-              <path stroke-linecap="round" stroke-linejoin="round" d="M10 14L21 3"/>
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 14v7H3V3h7"/>
-            </svg>
-            Abrir en Google Maps
-          </a>
-        </div>
       </div>
 
+      <!-- Footer centrado (un solo texto) -->
+      <footer class="mt-12 border-t border-zinc-600/70 pt-6 text-sm text-zinc-300 text-center">
+        © <span id="year"></span> - IG 2000 Desarrollo Web · <span class="text-zinc-400">Llevando a otro nivel tu negocio</span>
+      </footer>
     </div>
-
-    <!-- Footer (si ya lo tenés centrado, podés dejar el tuyo) -->
-    <footer class="mt-12 border-t border-zinc-200 pt-6 text-sm text-zinc-600 text-center">
-      <p>
-        © <span id="year"></span> ·
-        <span class="font-medium">IG 2000 Desarrollo Web</span>
-        <span class="text-zinc-400 mx-1">—</span>
-        <span class="text-zinc-500">Llevando tu negocio a otro nivel</span>
-      </p>
-    </footer>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- WhatsApp floating button -->
   <a target="_blank"
@@ -683,8 +801,10 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
+  <!-- Bootstrap JS (para carrusel) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+  <!-- Menú mobile -->
   <script>
     (function () {
       const btn = document.getElementById("menuBtn");
