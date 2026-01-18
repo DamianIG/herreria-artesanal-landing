@@ -147,7 +147,8 @@
     </div>
 
     <!-- Overlay -->
-    <div id="menuOverlay" class="fixed inset-0 bg-black/40 hidden md:hidden"></div>
+    <div id="menuOverlay"
+     class="fixed inset-0 bg-black/70 hidden md:hidden z-40"></div>
 
 
     <!-- Menú MOBILE -->
@@ -155,9 +156,10 @@
         id="mobileMenu"
         class="fixed top-0 right-0 h-full w-[86%] max-w-sm 
               bg-zinc-900 text-zinc-100
-              border-l border-zinc-700 shadow-soft
+              border-l border-zinc-700 
+              shadow-2xl ring-1 ring-white/10
               translate-x-full transition-transform duration-200
-              md:hidden z-50">"
+              md:hidden z-50"
     >
       <div class="p-4 border-b border-zinc-600/70 flex items-center justify-between">
         <div class="flex items-center gap-3">
