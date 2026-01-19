@@ -253,7 +253,15 @@
              class="inline-flex items-center justify-center gap-2 rounded-2xl bg-amber-500 px-6 py-3 text-sm font-semibold text-white hover:bg-amber-600 transition shadow-soft">
             Pedir presupuesto por WhatsApp <span aria-hidden="true">→</span>
           </a>
-
+          <button id="shareBtn" type="button" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-zinc-600/70 bg-zinc-800/60 px-6 py-3 text-sm font-semibold text-white hover:bg-zinc-800 transition"
+                >
+                  <svg class="h-5 w-5 text-zinc-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 6l-4-4-4 4"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v14"/>
+                  </svg>
+                  Compartir
+          </button>
           <a href="#servicios"
              class="inline-flex items-center justify-center gap-2 rounded-2xl border border-zinc-600/70 bg-zinc-800/60 px-6 py-3 text-sm font-semibold text-white hover:bg-zinc-800 transition">
             Ver trabajos y servicios
@@ -1102,5 +1110,84 @@
 
 
 </div><!-- /relative z-10 -->
+
+<!-- Toast: enlace copiado -->
+<div
+  id="shareToast"
+  class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[120] hidden
+         rounded-2xl border border-zinc-600/70 bg-zinc-900/95 px-4 py-3
+         text-sm text-zinc-100 shadow-soft"
+>
+  ✅ Enlace copiado. ¡Listo para compartir!
+</div>
+
+<!-- Script para Toast: enlace copiado -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("shareBtn");
+    const toast = document.getElementById("shareToast");
+
+    if (!btn) {
+      console.warn("No se encontró #shareBtn. Revisá el id del botón.");
+      return;
+    }
+
+    function showToast(msg = "✅ Enlace copiado. ¡Listo para compartir!") {
+      if (!toast) return;
+      toast.textContent = msg;
+      toast.classList.remove("hidden");
+      clearTimeout(window.__shareToastTimer);
+      window.__shareToastTimer = setTimeout(() => toast.classList.add("hidden"), 2200);
+    }
+
+    async function copyLink() {
+      const url = window.location.href;
+
+      // Clipboard moderno (requiere HTTPS / localhost)
+      try {
+        await navigator.clipboard.writeText(url);
+        showToast();
+        return;
+      } catch (e) {
+        // Fallback viejo
+        try {
+          const input = document.createElement("input");
+          input.value = url;
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand("copy");
+          document.body.removeChild(input);
+          showToast();
+          return;
+        } catch (e2) {
+          showToast("⚠️ No se pudo copiar el enlace en este navegador.");
+        }
+      }
+    }
+
+    async function shareOrCopy() {
+      const url = window.location.href;
+      const title = document.title;
+      const text = "Te comparto el sitio de Herrería Artesanal:";
+
+      if (navigator.share) {
+        try {
+          await navigator.share({ title, text, url });
+          return;
+        } catch (e) {
+          // Si canceló, no hacemos nada
+          return;
+        }
+      }
+
+      await copyLink();
+    }
+
+    btn.addEventListener("click", shareOrCopy);
+    console.log("Share listo ✅");
+  });
+</script>
+
+
 </body>
 </html>
