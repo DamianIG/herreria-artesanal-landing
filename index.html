@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Herrería Artesanal Formosa</title>
+  <title>Herrería Artesanal</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="./Img/logo_favicon36.jpeg">
@@ -34,9 +34,10 @@
 
   <style>
     .grain{
-      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.06) 1px, transparent 0);
-      background-size: 18px 18px;
-    }
+          background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,.22) 1px, transparent 0);
+          background-size: 14px 14px;
+          }
+
     /* Carrusel: controles más delicados */
     .carousel-control-prev, .carousel-control-next { width: 10%; }
     .carousel-control-prev-icon, .carousel-control-next-icon { filter: drop-shadow(0 6px 16px rgba(0,0,0,.35)); }
@@ -45,176 +46,183 @@
 
 <body class="bg-zinc-700 text-zinc-100 font-sans selection:bg-amber-300 selection:text-zinc-950">
 
-  <!-- TOP BAR -->
-  <div class="relative z-50 border-b border-zinc-600/70 bg-zinc-800/70 backdrop-blur">
-    <div class="mx-auto max-w-6xl px-4 py-2 flex flex-wrap items-center justify-between gap-2 text-sm">
+  <!-- ✅ Textura de fondo (NO envuelve nada, va atrás de todo) -->
+  <div class="fixed inset-0 pointer-events-none z-0 grain opacity-50 mix-blend-overlay"></div>
 
-      <!-- Mensaje -->
-      <div class="flex items-center gap-3 text-zinc-200">
-        <div class="h-8 w-8 rounded-xl bg-amber-400/10 border border-amber-400/20 grid place-items-center">
-          <!-- Icon: badge-check -->
-          <svg class="h-4 w-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/>
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2l3 2 3-1 1 3 3 2-2 3 1 3-3 1-2 3-3-2-3 2-2-3-3-1 1-3-2-3 3-2 1-3 3 1 3-2z"/>
-          </svg>
+
+  <!-- ✅ Todo el contenido por arriba -->
+  <div class="relative z-10">
+
+    <!-- TOP BAR -->
+    <div class="relative z-50 border-b border-zinc-600/70 bg-zinc-800/70 backdrop-blur">
+      <div class="mx-auto max-w-6xl px-4 py-2 flex flex-wrap items-center justify-between gap-2 text-sm">
+
+        <!-- Mensaje -->
+        <div class="flex items-center gap-3 text-zinc-200">
+          <div class="h-8 w-8 rounded-xl bg-amber-400/10 border border-amber-400/20 grid place-items-center">
+            <!-- Icon: badge-check -->
+            <svg class="h-4 w-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 2l3 2 3-1 1 3 3 2-2 3 1 3-3 1-2 3-3-2-3 2-2-3-3-1 1-3-2-3 3-2 1-3 3 1 3-2z"/>
+            </svg>
+          </div>
+          <span class="font-medium">
+            Presupuesto sin cargo <span class="text-zinc-500">·</span> Trabajos con garantía
+          </span>
         </div>
-        <span class="font-medium">
-          Presupuesto sin cargo <span class="text-zinc-500">·</span> Trabajos con garantía
-        </span>
+
+        <!-- Acciones -->
+        <div class="flex items-center gap-2">
+          <a href="#contacto"
+             class="inline-flex items-center gap-2 rounded-2xl border border-zinc-600/70 bg-zinc-800 px-3 py-1.5 font-semibold text-zinc-100 hover:bg-zinc-700 transition">
+            <span class="h-8 w-8 rounded-xl bg-amber-400/10 border border-amber-400/20 grid place-items-center">
+              <!-- Icon: phone -->
+              <svg class="h-4 w-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.09a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </span>
+            <span>Contactar</span>
+          </a>
+
+          <a target="_blank"
+             href="https://wa.me/543704622278?text=Hola%20Herrer%C3%ADa%20Artesanal%20Formosa,%20quisiera%20un%20presupuesto."
+             class="inline-flex items-center gap-2 rounded-2xl bg-amber-500 px-3 py-1.5 font-semibold text-white hover:bg-amber-600 transition shadow-soft">
+            <span class="h-8 w-8 rounded-xl bg-white/10 border border-white/15 grid place-items-center">
+              <!-- Icon: message-circle -->
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+              </svg>
+            </span>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-40 border-b border-zinc-600/70 bg-zinc-800/80 backdrop-blur">
+      <div class="mx-auto max-w-6xl px-4 py-4">
+        <div class="relative flex items-center justify-between">
+
+          <!-- Marca -->
+          <a href="#" class="relative flex items-center">
+            <div class="w-32 sm:w-36"></div>
+
+            <div class="pl-2">
+              <p class="font-extrabold tracking-tight text-xl sm:text-2xl text-zinc-100">
+                Herrería Artesanal
+              </p>
+            </div>
+
+            <!-- Logo sello -->
+            <div class="absolute left-0 top-1/2 -translate-y-1/2 z-30">
+              <div class="h-20 w-20 sm:h-24 sm:w-24 rounded-3xl border border-zinc-600/70 bg-zinc-900 shadow-soft overflow-hidden">
+                <img
+                  src="./Img/logo_herreria_artesanal_formosa.jpeg"
+                  alt="Herrería Artesanal Formosa"
+                  class="h-full w-full object-contain p-1"
+                />
+              </div>
+            </div>
+          </a>
+
+          <!-- Navegación DESKTOP -->
+          <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-zinc-200">
+            <a href="#nosotros" class="hover:text-white transition">Nosotros</a>
+            <a href="#servicios" class="hover:text-white transition">Servicios</a>
+            <a href="#galeria" class="hover:text-white transition">Galería</a>
+            <a href="#opiniones" class="hover:text-white transition">Opiniones</a>
+            <a href="#contacto" class="hover:text-white transition">Contacto</a>
+          </nav>
+
+          <!-- Botón HAMBURGUESA -->
+          <button
+            id="menuBtn"
+            class="md:hidden inline-flex items-center justify-center h-11 w-11 rounded-2xl border border-zinc-600/70 bg-zinc-800 hover:bg-zinc-700 transition"
+            aria-label="Abrir menú"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+          >
+            <svg class="h-5 w-5 text-zinc-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- Overlay (FUERA del header) -->
+    <div id="menuOverlay"
+         class="fixed inset-0 bg-black/80 hidden md:hidden z-[60]"></div>
+
+    <!-- Menú MOBILE (FUERA del header) -->
+    <div
+      id="mobileMenu"
+      class="fixed top-0 right-0 h-full w-[86%] max-w-sm
+             bg-zinc-950 text-zinc-100
+             border-l border-amber-500/40
+             shadow-2xl ring-1 ring-white/10
+             translate-x-full transition-transform duration-200
+             md:hidden z-[70]"
+      style="box-shadow:-24px 0 60px rgba(0,0,0,.75);"
+    >
+      <div class="p-4 border-b border-zinc-700 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="h-10 w-10 rounded-2xl bg-amber-400/10 border border-amber-400/20 grid place-items-center">
+            <svg class="h-5 w-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </div>
+          <p class="font-extrabold text-white">Menú</p>
+        </div>
+
+        <button
+          id="menuClose"
+          class="inline-flex items-center justify-center h-10 w-10 rounded-2xl border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 transition"
+          aria-label="Cerrar menú"
+        >
+          <svg class="h-5 w-5 text-zinc-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/>
+          </svg>
+        </button>
       </div>
 
-      <!-- Acciones -->
-      <div class="flex items-center gap-2">
-        <a href="#contacto"
-           class="inline-flex items-center gap-2 rounded-2xl border border-zinc-600/70 bg-zinc-800 px-3 py-1.5 font-semibold text-zinc-100 hover:bg-zinc-700 transition">
-          <span class="h-8 w-8 rounded-xl bg-amber-400/10 border border-amber-400/20 grid place-items-center">
-            <!-- Icon: phone -->
-            <svg class="h-4 w-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <div class="p-4">
+        <nav class="grid gap-2 text-zinc-100 font-semibold">
+          <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-800 transition" href="#nosotros">Nosotros</a>
+          <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-800 transition" href="#servicios">Servicios</a>
+          <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-800 transition" href="#galeria">Galería</a>
+          <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-800 transition" href="#opiniones">Opiniones</a>
+          <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-800 transition" href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="mt-5 pt-5 border-t border-zinc-700">
+          <a
+            target="_blank"
+            href="https://wa.me/543704622278?text=Hola%20Herrer%C3%ADa%20Artesanal%20Formosa,%20quisiera%20un%20presupuesto."
+            class="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-amber-500 px-5 py-3 text-sm font-semibold text-white hover:bg-amber-600 transition shadow-soft"
+          >
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+            </svg>
+            Consultar por WhatsApp
+          </a>
+
+          <a
+            href="tel:+543704622278"
+            class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-zinc-700 bg-zinc-900 px-5 py-3 text-sm font-semibold text-white hover:bg-zinc-800 transition"
+          >
+            <svg class="h-5 w-5 text-zinc-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round"
                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.09a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z"/>
             </svg>
-          </span>
-          <span>Contactar</span>
-        </a>
-
-        <a target="_blank"
-           href="https://wa.me/543704622278?text=Hola%20Herrer%C3%ADa%20Artesanal%20Formosa,%20quisiera%20un%20presupuesto."
-           class="inline-flex items-center gap-2 rounded-2xl bg-amber-500 px-3 py-1.5 font-semibold text-white hover:bg-amber-600 transition shadow-soft">
-          <span class="h-8 w-8 rounded-xl bg-white/10 border border-white/15 grid place-items-center">
-            <!-- Icon: message-circle -->
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
-            </svg>
-          </span>
-          <span>WhatsApp</span>
-        </a>
+            Llamar
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- HEADER -->
-<header class="sticky top-0 z-40 border-b border-zinc-600/70 bg-zinc-800/80 backdrop-blur">
-  <div class="mx-auto max-w-6xl px-4 py-4">
-    <div class="relative flex items-center justify-between">
-
-      <!-- Marca -->
-      <a href="#" class="relative flex items-center">
-        <div class="w-32 sm:w-36"></div>
-
-        <div class="pl-2">
-          <p class="font-extrabold tracking-tight text-xl sm:text-2xl text-zinc-100">
-            Herrería Artesanal
-          </p>
-        </div>
-
-        <!-- Logo sello -->
-        <div class="absolute left-0 top-1/2 -translate-y-1/2 z-30">
-          <div class="h-20 w-20 sm:h-24 sm:w-24 rounded-3xl border border-zinc-600/70 bg-zinc-900 shadow-soft overflow-hidden">
-            <img
-              src="./Img/logo_herreria_artesanal_formosa.jpeg"
-              alt="Herrería Artesanal Formosa"
-              class="h-full w-full object-contain p-1"
-            />
-          </div>
-        </div>
-      </a>
-
-      <!-- Navegación DESKTOP -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-zinc-200">
-        <a href="#nosotros" class="hover:text-white transition">Nosotros</a>
-        <a href="#servicios" class="hover:text-white transition">Servicios</a>
-        <a href="#galeria" class="hover:text-white transition">Galería</a>
-        <a href="#opiniones" class="hover:text-white transition">Opiniones</a>
-        <a href="#contacto" class="hover:text-white transition">Contacto</a>
-      </nav>
-
-      <!-- Botón HAMBURGUESA -->
-      <button
-        id="menuBtn"
-        class="md:hidden inline-flex items-center justify-center h-11 w-11 rounded-2xl border border-zinc-600/70 bg-zinc-800 hover:bg-zinc-700 transition"
-        aria-label="Abrir menú"
-        aria-controls="mobileMenu"
-        aria-expanded="false"
-      >
-        <svg class="h-5 w-5 text-zinc-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-
-    </div>
-  </div>
-</header>
-
-<!-- Overlay (FUERA del header) -->
-<div id="menuOverlay"
-     class="fixed inset-0 bg-black/80 hidden md:hidden z-[60]"></div>
-
-<!-- Menú MOBILE (FUERA del header) -->
-<div
-  id="mobileMenu"
-  class="fixed top-0 right-0 h-full w-[86%] max-w-sm
-         bg-zinc-950 text-zinc-100
-         border-l border-amber-500/40
-         shadow-2xl ring-1 ring-white/10
-         translate-x-full transition-transform duration-200
-         md:hidden z-[70]"
-  style="box-shadow:-24px 0 60px rgba(0,0,0,.75);"
->
-  <div class="p-4 border-b border-zinc-700 flex items-center justify-between">
-    <div class="flex items-center gap-3">
-      <div class="h-10 w-10 rounded-2xl bg-amber-400/10 border border-amber-400/20 grid place-items-center">
-        <svg class="h-5 w-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </div>
-      <p class="font-extrabold text-white">Menú</p>
-    </div>
-
-    <button
-      id="menuClose"
-      class="inline-flex items-center justify-center h-10 w-10 rounded-2xl border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 transition"
-      aria-label="Cerrar menú"
-    >
-      <svg class="h-5 w-5 text-zinc-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/>
-      </svg>
-    </button>
-  </div>
-
-  <div class="p-4">
-    <nav class="grid gap-2 text-zinc-100 font-semibold">
-      <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-800 transition" href="#nosotros">Nosotros</a>
-      <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-800 transition" href="#servicios">Servicios</a>
-      <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-800 transition" href="#galeria">Galería</a>
-      <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-800 transition" href="#opiniones">Opiniones</a>
-      <a class="mobile-link rounded-2xl px-4 py-3 hover:bg-zinc-800 transition" href="#contacto">Contacto</a>
-    </nav>
-
-    <div class="mt-5 pt-5 border-t border-zinc-700">
-      <a
-        target="_blank"
-        href="https://wa.me/543704622278?text=Hola%20Herrer%C3%ADa%20Artesanal%20Formosa,%20quisiera%20un%20presupuesto."
-        class="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-amber-500 px-5 py-3 text-sm font-semibold text-white hover:bg-amber-600 transition shadow-soft"
-      >
-        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
-        </svg>
-        Consultar por WhatsApp
-      </a>
-
-      <a
-        href="tel:+543704622278"
-        class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-zinc-700 bg-zinc-900 px-5 py-3 text-sm font-semibold text-white hover:bg-zinc-800 transition"
-      >
-        <svg class="h-5 w-5 text-zinc-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round"
-                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.09a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z"/>
-        </svg>
-        Llamar
-      </a>
-    </div>
-  </div>
-</div>
 
 
   <!-- HERO -->
@@ -974,6 +982,6 @@
 </script>
 
 
-
+</div><!-- /relative z-10 -->
 </body>
 </html>
